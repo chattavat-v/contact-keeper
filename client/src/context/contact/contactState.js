@@ -19,18 +19,21 @@ const ContactState = props => {
         id: 1,
         name: 'Chattavat Vattanasiri',
         email: 'chattavat.psu@gmail.com',
+        phone: '111-111-1111',
         type: 'personal'
       },
       {
         id: 2,
         name: 'Red Skull',
         email: 'red.skull@gmail.com',
+        phone: '222-111-2222',
         type: 'professional'
       },
       {
         id: 3,
         name: 'Caption Hook',
         email: 'cap.hook@gmail.com',
+        phone: '333-333-3333',
         type: 'personal'
       }
     ]
