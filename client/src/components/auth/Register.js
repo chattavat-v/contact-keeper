@@ -11,7 +11,7 @@ const Register = () => {
   const { name, email, password, password2 } = user;
 
   const onChange = (e) => {
-    setUser({ ...user, [e.taget.name]: e.target.value });
+    setUser({ ...user, [e.target.name]: e.target.value });
   };
 
   const onSubmit = (e) => {
