@@ -24,10 +24,10 @@ router.get('/', auth, async (req, res) => {
 // @access Private
 router.post('/', [ auth, [ check('name', 'Name is required').not().isEmpty() ]
   ], async (req, res) => {
-    const error = validationResult(req);
-  
-    if(!error.isEmpty()) {
-      return res.status(400).json({ error: error.array()});
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
     }
 
     const { name, email, phone, type } = req.body;
