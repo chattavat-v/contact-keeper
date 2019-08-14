@@ -15,10 +15,10 @@ router.post('/', [
   check('email', 'Plase include a vlid email').isEmail(),
   check('password', 'Plase enter a password with 6 or more characters').isLength({ min: 6})
 ], async (req, res) => {
-  const error = validationResult(req);
-  
-  if(!error.isEmpty()) {
-    return res.status(400).json({ error: error.array()});
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
   }
 
   const { name, email, password } = req.body;
@@ -52,7 +52,7 @@ router.post('/', [
       if(err) throw err;
       res.json({ token });
     });
-  } catch (error) {
+  } catch (err) {
     console.error(err.message);
     res.status(500).send('Server error');
   }
