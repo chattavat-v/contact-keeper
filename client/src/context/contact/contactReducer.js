@@ -5,6 +5,7 @@ import {
   CLEAR_CURRENT,
   UPDATE_CONTACT,
   FILTER_CONTACTS,
+  CONTACT_ERROR,
   CLEAR_FILTER
 } from '../types';
 
@@ -44,10 +45,15 @@ export default (state, action) => {
         })
       }
     case CLEAR_FILTER:
-        return {
-          ...state,
-          filtered: null
-        }
+      return {
+        ...state,
+        filtered: null
+      }
+    case CONTACT_ERROR:
+      return {
+        ...state,
+        error: action.payload
+      }
     default:
       return state;
   }
