@@ -41,14 +41,15 @@ const AuthState = props => {
         type: REGISTER_SUCCESS,
         payload: res.data
       });
+
+      loadUser();
     } catch (err) {
       dispatch({
         type: REGISTER_FAIL,
         payload: err.response.data.msg
       });
     }
-
-  }
+  };
 
   // login user
   const login = () => console.log('login');
